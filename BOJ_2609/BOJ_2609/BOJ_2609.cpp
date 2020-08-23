@@ -10,19 +10,11 @@
 
 using namespace std;
 
-int gcd(int a,int b){
-    int c;
-    if (a<b) {
-        int temp = a;
-        a=b;
-        b=temp;
-    }
-    while (b!=0) {
-        c=a%b;
-        a=b;
-        b=c;
-    }
-    return a;
+int gcd(int a, int b)
+{
+        if (a%b == 0)
+                 return b;
+        return gcd(b, a%b);
 }
 
 int main(int argc, const char * argv[]) {
