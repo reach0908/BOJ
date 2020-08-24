@@ -9,12 +9,12 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-const int MAX = 1000000;
-int minFactor[MAX];
-vector<int> prime; //소수
+//const int MAX = 1000000;
+//int minFactor[MAX];
+//vector<int> prime; //소수
 
 
-/*bool primeCheck(int num){
+void primeCheck(int num){
     if (num%2==0||num==1) {
         return false;
     }
@@ -24,10 +24,10 @@ vector<int> prime; //소수
         }
     }
     return true;
-}*/
+}
 
 //에라토스테네스의 체
-void eratosthenes(void)
+/*void eratosthenes(void)
 {
         minFactor[0] = minFactor[1] = -1;
         for (int i = 2; i < MAX; i++)
@@ -41,14 +41,14 @@ void eratosthenes(void)
         for (int i = 3; i < MAX; i++)
                  if (minFactor[i] == i)
                          prime.push_back(i);
-}
+}*/
 
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     
-    eratosthenes();
+    /*eratosthenes();
     while (1){
         int N;
         cin >> N;
@@ -61,8 +61,8 @@ int main() {
                 cout << N << " = " << prime[i] << " + " << N - prime[i]<<"\n";
                  break;
             }
-    }
-    /*while (1) {
+    }*/
+    while (1) {
         int num,a,b;
         cin >>num;
         if (num==0) {
@@ -81,6 +81,6 @@ int main() {
             i++;
         }
         cout << num<<" = "<<a<<" + "<<b << endl;
-    }*/
+    }
     return 0;
 }
