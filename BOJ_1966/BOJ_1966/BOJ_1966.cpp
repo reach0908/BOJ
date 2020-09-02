@@ -62,9 +62,8 @@ int main()
                 
             }
             else {
-                Node tempNode = q.front();
+                q.push(q.front());
                 q.pop();
-                q.push(tempNode);
             }
         }
 		cout << index << "\n";
