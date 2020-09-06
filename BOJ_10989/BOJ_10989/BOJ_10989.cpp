@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #define MAX_SIZE 10001
+
+//10000개 까지면 배열은 10001을 잡아주어야 한다.
 using namespace std;
 
 int T;
