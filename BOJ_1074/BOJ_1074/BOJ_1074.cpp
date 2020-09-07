@@ -12,24 +12,36 @@ int x, y;
 bool found = false;
 
 void zSearch(int startX, int endX, int startY, int endY) {
-	if (found) {
-		return;
-	}
 	int midX = (startX + endX) / 2;
 	int midY = (startY + endY) / 2;
-	if (midX % 2 == 1&&midY % 2 == 1)
+	if (midX % 2 == 1 && midY % 2 == 1)
 	{
-		for (int i = startY; i < endY; i++)
+		int i = startX;
+		int j = startY;
+		if (x==i&&y==j)
 		{
-			for (int j = startX; j < endX; j++) {
-				if (i == x && j == y)
-				{
-					found = true;
-					return;
-				}
-				countNum++;
-			}
+			cout << countNum;
+			return;
 		}
+		countNum++;
+		if (x == i+1 && y == j)
+		{
+			cout << countNum;
+			return;
+		}
+		countNum++;
+		if (x == i && y == j+1)
+		{
+			cout << countNum;
+			return;
+		}
+		countNum++;
+		if (x == i+1 && y == j+1)
+		{
+			cout << countNum;
+			return;
+		}
+		countNum++;
 		return;
 	}
 	else {
@@ -42,11 +54,8 @@ void zSearch(int startX, int endX, int startY, int endY) {
 
 int main()
 {
-	cin >> N >> x >> y;
+	cin >> N >> y >> x;
 	//벡터 초기화
 	int rowcol = pow(2, N);
 	zSearch(0, rowcol, 0, rowcol);
-	cout << countNum;
-	return 0;
 }
-
