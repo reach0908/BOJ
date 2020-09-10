@@ -2,66 +2,105 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
 int T;
-vector<string> v;
 
-void func(int N,int sum,int num,int index) {
-   
-    if (index > 2*N-3) {
-        if (sum==0)
-        {
-            for (int i = 0; i < v.size()-1; i++)
-            {
-                cout << v[i];
-            }
-            cout << endl;
-        }
-        else
-        {
-            return;
-        }
-    }
-    else {
+
+//자연수의 범위가 매우 한정적이므로 완전탐색으로 문제를 해결 할 수 있다.
+// 수 리스트와 연산자 리스트를 
+
+//재귀이용
+void func(vector<int> numV,vector<char> v, int N) {
+    int sum = 1;
+    string s;
+    s += "1";
+    int j = 0;
+    for (int i = 1; i < N; i++)
+    {
        
-        v[index + 1] = " ";
-        v[index + 2] = num + 1 + '0';
-        if (sum<0)
+            if (v[j] == ' ')
+            {
+                if (sum > 0)
+                {
+                    sum = sum * 10 + numV[i];
+                }
+                else
+                {
+                    sum = sum * 10 - numV[i];
+                }
+                s += " ";
+                s += (numV[i] + '0');
+                j++;
+            }
+            else if (v[j] == '+')
+            {
+                sum += numV[i];
+                s += "+";
+                s += (numV[i] + '0');
+                j++;
+            }
+            else if (v[j] == '-')
+            {
+                sum -= numV[i];
+                s += "-";
+                s += (numV[i] + '0');
+                j++;
+            }
+    }
+    if (sum == 0)
+    {
+        for (int i = 0; i < s.size(); i++)
         {
-            func(N, (sum * 10 - num), num + 1, index + 2);
+            cout << s[i];
         }
-        else if (sum >= 0) {
-            func(N, (sum * 10 + num), num + 1, index + 2);
-        }
-        v[index + 1] = "+";
-        v[index + 2] = num + 1 + '0';
-        func(N, sum + num, num + 1, index + 2);
-        v[index + 1] = "-";
-        v[index + 2] = num + 1 + '0';
-        func(N, sum - num, num + 1, index + 2);
-        
+        cout << endl;
     }
 }
+void oper(vector<int> numV,vector<char> v,int N) {
+    if (v.size()==N-1)
+    {
+        func(numV,v,N);
+        return;
+    }
+    else {
+        v.push_back(' ');
+        oper(numV,v,N);
+        v.pop_back();
+
+        v.push_back('+');
+        oper(numV,v, N);
+        v.pop_back();
+
+        v.push_back('-');
+        oper(numV,v, N);
+        v.pop_back();
+    }
+}
+
+
 
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
     cin >> T;
+
     for (int i = 0; i < T; i++)
     {
         int temp;
+        vector<int> numV;
         cin >> temp;
-        v.resize(2*temp);
-        int sum = 1;
-        v[0] = '1';
-        func(temp, sum,1,0);
+        for (int i = 1; i <= temp; i++)
+        {
+            numV.push_back(i);
+        }
+        vector<char> operV;
+        oper(numV,operV,temp);
+        
     }
-    
-    return 0;
 }
 
