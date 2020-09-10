@@ -15,10 +15,10 @@
 #define MAX_SIZE 1000000
 using namespace std;
 
-int sorted[MAX_SIZE];
+//int sorted[MAX_SIZE];
 int T;
 
-void merge(int arr[],int start,int mid,int end){
+/*void merge(int arr[],int start,int mid,int end){
     int i=start;
     int j=mid+1;
     int k=start;
@@ -57,7 +57,7 @@ void mergeSort(int arr[], int start,int end){
         mergeSort(arr, mid+1, end);
         merge(arr,start,mid,end);
     }
-}
+}*/
 
 
 
@@ -66,15 +66,18 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
+    vector<int> arrV;
     cin >> T;
-    int arr[T];
+    //int arr[T];
     for (int i=0; i<T; i++) {
-        cin >> arr[i];
+        int temp;
+        cin >> temp;
+        arrV.push_back(temp);
     }
-    mergeSort(arr,0,T-1);
+    sort(arrV.begin(),arrV.end());
+    //mergeSort(arr,0,T-1);
     for(int i=0;i<T;i++){
-        cout << arr[i] << "\n";
+        cout << arrV[i] << "\n";
     }
     return 0;
 }
