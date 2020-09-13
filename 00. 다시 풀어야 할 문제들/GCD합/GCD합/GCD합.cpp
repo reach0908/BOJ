@@ -33,7 +33,7 @@ int main()
 		{
 			cin >> v[j];
 		}
-		int result = 0;
+		long long result = 0;
 		for (int j= 0; j < n;j++)
 		{
 			for (int k = j+1; k < n; k++)
