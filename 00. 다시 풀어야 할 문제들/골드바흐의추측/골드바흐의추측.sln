@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "골드바흐의추측", "골드바흐의추측\골드바흐의추측.vcxproj", "{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Debug|x64.ActiveCfg = Debug|x64
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Debug|x64.Build.0 = Debug|x64
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Debug|x86.ActiveCfg = Debug|Win32
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Debug|x86.Build.0 = Debug|Win32
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Release|x64.ActiveCfg = Release|x64
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Release|x64.Build.0 = Release|x64
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Release|x86.ActiveCfg = Release|Win32
+		{AEEB7BE5-BFB4-408E-970A-0D22BC7FD4AB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9241AFF2-E3C1-403E-807E-1CC0FE9C8ECC}
+	EndGlobalSection
+EndGlobal
