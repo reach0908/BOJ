@@ -12,7 +12,6 @@ using namespace std;
 
 int result[11] = {0,1,2,4,7,0};
 
-
 int func(int num) {
     if (num==1||num==2||num==3) {
         return result[num];
