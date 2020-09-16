@@ -21,7 +21,6 @@ void DFS(int board[][BOARD_MAX],bool visited[][BOARD_MAX],int startY,int startX)
     }
 }
 
-
 int main()
 {
     ios_base::sync_with_stdio(false);
