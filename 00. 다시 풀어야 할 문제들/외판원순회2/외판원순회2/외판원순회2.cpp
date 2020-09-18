@@ -4,51 +4,56 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
-#define INF 1000001
+#define INF 9999999999
 using namespace std;
-const int MAX = 10;
+
+const int MAX = 11;
+
+int board[MAX][MAX];
+
 int N;
 
-int v[MAX][MAX];
-vector<int> node;
-int main()
-{
-	cin>> N;
-	
+int MIN = INF;
+
+int main() {
+	cin >> N;
 	for (int i = 0; i < N; i++)
 	{
-		for (int j = 0; j < N; j++) {
-			cin >> v[i][j];
+		for (int j = 0; j < N; j++)
+		{
+			cin >> board[i][j];
 		}
-		node.push_back(i);
+		
 	}
-	int MIN = INF;
+	vector<int> v(N);
+	for (int i = 0; i < N; i++)
+	{
+		v[i] = i;
+	}
 	do
 	{
 		bool cango = true;
-		int dist = 0;
-		for (int i = 0; i < node.size()-1; i++)
+		int sum = 0;
+		for (int i = 0; i < N-1; i++)
 		{
-			int startNode = node[i];
-			int nextNode = node[i + 1];
-			int cost = v[startNode][nextNode];
+			int cost = board[v[i]][v[i + 1]];
 			if (cost==0)
 			{
 				cango = false;
 				break;
 			}
 			else {
-				dist += cost;
+				sum += cost;
 			}
+			
 		}
-		if (cango==true)
+		if (cango&& board[v[N - 1]][v[0]]!=0)
 		{
-			dist += v[node[N - 1]][node[0]];
-			MIN = min(MIN, dist);
+			sum += board[v[N - 1]][v[0]];
+			MIN = min(MIN, sum);
 		}
-	} while (next_permutation(node.begin(),node.end()));
+	} while (next_permutation(v.begin(),v.end()));
 	cout << MIN;
+
 	return 0;
 }
-
