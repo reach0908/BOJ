@@ -30,6 +30,7 @@ int main()
 	}
 	cout << result << "\n";
 	return 0;
+	//가장 큰 차이부터 기지국을 설치해 줄여주면 된다.
 
 
 }
