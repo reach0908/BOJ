@@ -14,7 +14,7 @@ using namespace std;
 //j를 0kg에서 k(배낭에 담을 수 있는 무게)까지
 // D[i][j] = max(D[i][j],D[i-1][j-w[i]]+v[i])
 
-int d[101][100001];
+int d[102][100002];
 
 
 int main()
