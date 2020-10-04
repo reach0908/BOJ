@@ -28,7 +28,7 @@ void DFS(int cnt) {
 		{
 			continue;
 		}
-		if (arr[cnt]<=v[i])
+		if (arr[cnt-1]<=v[i])
 		{
 			arr[cnt] = v[i];
 			DFS(cnt + 1);
