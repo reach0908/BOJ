@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "연결요소의개수", "연결요소의개수\연결요소의개수.vcxproj", "{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Debug|x64.ActiveCfg = Debug|x64
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Debug|x64.Build.0 = Debug|x64
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Debug|x86.ActiveCfg = Debug|Win32
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Debug|x86.Build.0 = Debug|Win32
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Release|x64.ActiveCfg = Release|x64
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Release|x64.Build.0 = Release|x64
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Release|x86.ActiveCfg = Release|Win32
+		{7E3F8AEC-453B-41F9-A821-9C199AF0A23B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B04B2CCB-219F-4051-A9E1-3AB829F3CB93}
+	EndGlobalSection
+EndGlobal
