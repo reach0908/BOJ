@@ -23,21 +23,22 @@ int BFS(int start, int dest) {
 		if (curLoc == dest) {
 			return curSec;
 		}
-		if (0 <= curLoc - 1 && visited[curLoc - 1] == 0)
+		if (curLoc * 2 < MAX && visited[curLoc * 2] == 0)
 		{
-			visited[curLoc - 1] = 1;
-			q.push({ curSec + 1,curLoc - 1 });
+			visited[curLoc * 2] = 1;
+			q.push({ curSec ,curLoc * 2 });
 		}
 		if (curLoc + 1 < MAX && visited[curLoc + 1] == 0)
 		{
 			visited[curLoc + 1] = 1;
 			q.push({ curSec + 1 ,curLoc + 1 });
 		}
-		if (curLoc * 2 < MAX && visited[curLoc * 2] == 0)
+		if (0 <= curLoc - 1 && visited[curLoc - 1] == 0)
 		{
-			visited[curLoc * 2] = 1;
-			q.push({ curSec ,curLoc * 2 });
+			visited[curLoc - 1] = 1;
+			q.push({ curSec + 1,curLoc - 1 });
 		}
+		
 	}
 }
 
