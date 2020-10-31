@@ -48,7 +48,6 @@ void BFS(int screen,int clip) {
     }
 }
 
-
 int main()
 {
     cin >> S;
