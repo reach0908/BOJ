@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const int MAX =50;
+const int MAX =51;
 
 int R,C;
 string board[MAX];
@@ -19,17 +19,13 @@ pair<int,int> moveDir[4] ={{1,0},{0,1},{-1,0},{0,-1}};
 queue<pair<int,int>> wq;
 void BFS(int y,int x){
 	
-	queue<pair<int,int>> q;
+	priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> q;
     
     q.push({y,x});
 	cache[y][x] = 1;
+	
 	while(!q.empty()){
-		int curY = q.front().first;
-		int curX = q.front().second;
-		if(curY==destY&&curX==destX){
-			cout << cache[curY][curX]-1;
-		}
-		q.pop();
+		
 		for(int i=0;i<wq.size();i++){
 			int curWY = wq.front().first;
 			int curWX = wq.front().second;
@@ -45,19 +41,27 @@ void BFS(int y,int x){
                 }
 			}
 		}
-		for(int i=0;i<q.size();i++){
+		for(int i=0; i<q.size();i++){
+			int curY = q.top().first;
+			int curX = q.top().second;
+			if(curY==destY&&curX==destX){
+				cout << cache[curY][curX]-1;
+				return;
+			}
+			q.pop();
 			for(int j=0;j<4;j++){
 				int nextY = curY + moveDir[j].first;
 				int nextX = curX + moveDir[j].second;
-                if(0<=nextX&&nextX<C&&0<=nextY&&nextY<R){
-                    if(board[nextY][nextX]!='X'&&board[nextY][nextX]!='*'){
-					    if(cache[nextY][nextX]==0){
-						    cache[nextY][nextX] = cache[curY][curX]+1;
-						    q.push({nextY,nextX});
-					    }
-				    }
-                }
+				if(0<=nextX&&nextX<C&&0<=nextY&&nextY<R){
+                	if(board[nextY][nextX]!='X'&&board[nextY][nextX]!='*'){
+				    	if(cache[nextY][nextX]==0){
+					    	cache[nextY][nextX] = cache[curY][curX]+1;
+							q.push({nextY,nextX});
+						}
+					}
+        	    }
 			}
+			
 		}
 	}
 	cout << "KAKTUS";
@@ -84,6 +88,5 @@ int main() {
 		}
 	}
 	BFS(y,x);
-
 	return 0;
 }
