@@ -4,24 +4,24 @@
 
 using namespace std;
 
-const int MAX = 11;
-
+const int MAX = 1000001;
+const int INF = 1000000009;
 int cache[MAX] = { 0 };
 
-int N,T;
+int N, T;
 
 int main()
 {
-    cin >> T;
+	cin >> T;
 	for (int i = 0; i < T; i++)
 	{
 		cin >> N;
 		cache[1] = 1;
 		cache[2] = 2;
 		cache[3] = 4;
-		for (int j = 4; j <=N; j++)
+		for (int j = 4; j <= N; j++)
 		{
-			cache[j] = cache[j - 1] + cache[j - 2] + cache[j-3];
+			cache[j] = ((cache[j - 1] + cache[j - 2])%INF + cache[j - 3])%INF;
 		}
 		cout << cache[N] << endl;
 	}
