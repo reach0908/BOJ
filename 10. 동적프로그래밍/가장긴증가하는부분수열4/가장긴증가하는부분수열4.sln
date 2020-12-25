@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "가장긴증가하는부분수열4", "가장긴증가하는부분수열4\가장긴증가하는부분수열4.vcxproj", "{843FDBAF-A128-42F4-83BD-E83B985AA973}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Debug|x64.ActiveCfg = Debug|x64
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Debug|x64.Build.0 = Debug|x64
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Debug|x86.ActiveCfg = Debug|Win32
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Debug|x86.Build.0 = Debug|Win32
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Release|x64.ActiveCfg = Release|x64
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Release|x64.Build.0 = Release|x64
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Release|x86.ActiveCfg = Release|Win32
+		{843FDBAF-A128-42F4-83BD-E83B985AA973}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {938DE8A3-1845-4E38-95A7-C333275A8791}
+	EndGlobalSection
+EndGlobal
