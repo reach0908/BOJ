@@ -25,9 +25,9 @@ void solve() {
 				cacheP[i] = cacheP[j] + 1;
 			}
 		}
-		cout << cacheP[i] << endl;
+		
 	}
-	cout << "--------------" << endl;
+	
 	for (int i = N-1; i >=0; i--)
 	{
 		cacheM[i] = 1;
@@ -38,7 +38,7 @@ void solve() {
 				cacheM[i] = cacheM[j] + 1;
 			}
 		}
-		cout << cacheM[i] << endl;
+		
 	}
 
 	int res = 0;
@@ -47,7 +47,6 @@ void solve() {
 		res = max(res, cacheP[i]+cacheM[i]-1);
 	}
 	cout << res;
-
 }
 
 
