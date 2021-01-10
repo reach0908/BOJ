@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <map>
 
 using namespace std;
 
@@ -13,7 +12,7 @@ int n;
 int arr[4][MAX];
 vector<int> l;
 vector<int> r;
-int ans=0;
+long long ans=0;
 int main()
 {
 	
@@ -37,8 +36,8 @@ int main()
 	sort(r.begin(), r.end());
 	for (int i = 0; i < l.size(); i++)
 	{
-		int low = lower_bound(r.begin(), r.end(), 0 - l[i]) - r.begin();
-		int high = upper_bound(r.begin(), r.end(), 0 - l[i]) - r.begin();
+		long long low = lower_bound(r.begin(), r.end(), 0 - l[i]) - r.begin();
+		long long high = upper_bound(r.begin(), r.end(), 0 - l[i]) - r.begin();
 
 		ans += high - low;
 	}
