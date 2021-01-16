@@ -5,7 +5,7 @@
 #include <vector>
 
 using namespace std;
-const int MAX = 102;
+const int MAX = 104;
 const int INF = 1e9;
 
 string board[MAX];
@@ -13,6 +13,7 @@ string board[MAX];
 typedef struct options{
     int y,x,val;
 }options;
+
 struct cmp
 {
     bool operator()(options a,options b){
@@ -22,15 +23,16 @@ struct cmp
 
 int t,h,w;
 pair<int,int> moveDir[4] = {{1,0},{-1,0},{0,1},{0,-1}};
+
 int res[3][MAX][MAX];
-bool visited[MAX][MAX];
+
 
 vector<options> point;
 
 void BFS(int y, int x, int num)
 {
     priority_queue<options, vector<options>, cmp> q;
-    
+    bool visited[MAX][MAX]={false};
     q.push({y,x,0});
     visited[y][x] = true;
     res[num][y][x] =0;
@@ -65,10 +67,10 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+
     cin >> t;
-    while (t>0)
+    while (t--)
     {
-        memset(visited,false,sizeof(visited));
         memset(res,0,sizeof(res));
         point.clear();
         point.push_back({0,0}); 
@@ -103,8 +105,7 @@ int main()
                 {
                     res[i][j][k]=INF;
                 }
-            }
-            
+            } 
         }
         for (int i = 0; i < 3; i++)
         {
@@ -131,7 +132,6 @@ int main()
             }
         }
         cout << ans << endl;
-        t--;
     }
     return 0;
 }
