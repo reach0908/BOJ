@@ -10,7 +10,7 @@ const int MAX = 101;
 int N,K;
 int board[MAX][MAX]={0};
 bool visited[MAX][MAX]={false};
-queue<pair<int,int>> arr;
+queue<pair<int,char>> arr;
 
 pair<int,int> moveDir[4]= {{0,1},{1,0},{0,-1},{-1,0}};
 
@@ -56,6 +56,8 @@ void solve(){
 }
 int main(int argc, char const *argv[])
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     cin >> N >> K;
     for (int i = 0; i < K; i++)
@@ -71,14 +73,7 @@ int main(int argc, char const *argv[])
         int cnt;
         char dir;
         cin >> cnt >> dir;
-        if(dir=='D'){
-            //오른쪽
-            arr.push({cnt,0});
-        }
-        else if(dir=='L'){
-            //왼쪽
-            arr.push({cnt,1});
-        }
+        arr.push({cnt,dir});
     }
     solve();
     return 0;
