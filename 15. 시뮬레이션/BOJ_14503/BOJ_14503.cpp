@@ -36,8 +36,8 @@ int main(int argc, char const *argv[])
     
     while (!q.empty())
     {
-        int y = q.front().first.y;
-        int x = q.front().first.x;
+        int y = q.front().first.first;
+        int x = q.front().first.second;
         int curDir = q.front().second;
         
         if(board[y][x]==0){
@@ -63,7 +63,7 @@ int main(int argc, char const *argv[])
         if(!flag){
             int nextY = y - moveDir[curDir].y;
             int nextX = x - moveDir[curDir].x;
-            if(0<=nextY&&0<=nextX&&nextY<N&&nextX<M&&board[nextY][nextX]!=1){
+            if((0<=nextY&&0<=nextX&&nextY<N&&nextX<M)&&board[nextY][nextX]!=1){
                 q.push({{nextY,nextX},curDir});
             }else{
                 break;
